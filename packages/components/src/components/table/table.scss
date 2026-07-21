@@ -254,7 +254,9 @@
 
 	&:not([data-width]),
 	&[data-width="full"] {
-		overflow: auto;
+		// Clip on the vertical axis allows the table to have sticky headers while being horizontally scrollable
+		// https://www.bram.us/2026/03/30/css-sticky-per-axis/
+		overflow: auto clip;
 
 		table {
 			inline-size: inherit;
